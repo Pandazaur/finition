@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Lobster&family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap');
 
 /*! @import */
 @tailwind base;
@@ -10,4 +11,9 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.font-brand {
+    letter-spacing: .2em;
 }

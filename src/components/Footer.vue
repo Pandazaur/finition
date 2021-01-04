@@ -1,6 +1,11 @@
 <template>
-    <div class="bg-gray-800 py-12">
-        <div class="text-center font-title text-white">Made by Alexandre Borel</div>
+    <div class="bg-gray-800 py-6 px-10 relative">
+        <div class="absolute"></div>
+        
+        <div class="text-left font-title text-white">
+            <div class="font-brand text-lg opacity-50">FINITION</div>
+            <div class="text-xs">by Alexandre Borel</div>
+        </div>
     </div>
 </template>
 

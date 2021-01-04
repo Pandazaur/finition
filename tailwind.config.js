@@ -6,6 +6,7 @@ module.exports = {
     theme: {
         extend: {},
         fontFamily: {
+            brand: ['"Bellota Text"', 'sans-serif'],
             title: ['"PT Sans"', 'sans-serif'],
             body: ['"Arimo"', 'sans-serif'],
             // sans: ['"Arimo"']

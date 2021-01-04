@@ -2,8 +2,8 @@
     <nav id="header" class="w-full z-30 top-0 text-white">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
-                <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-                    LANDING
+                <a class="toggleColour text-white no-underline hover:no-underline font-brand text-xl lg:text-2xl" href="#">
+                    FINITION
                 </a>
             </div>
             <div class="block lg:hidden pr-4">
