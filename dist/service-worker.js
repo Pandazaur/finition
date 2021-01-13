@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.b5f21c3bf2a257a76140cf26948e5b75.js"
+  "/precache-manifest.b887fd8bd1c94bc9bea777757ed8f7a5.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "quote-quizz"});
+workbox.core.setCacheNameDetails({prefix: "finition"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {

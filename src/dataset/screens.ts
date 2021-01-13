@@ -16,10 +16,10 @@ const screenCategories: ScreenCategory[] =[{
                 pictures: [`${process.env.BASE_URL}img/facebook/login_1.png`],
                 name: "Facebook"
             }, {
-                pictures: [`${process.env.BASE_URL}img/instagram/login_web_1.png`],
+                pictures: [`${process.env.BASE_URL}img/instagram/login_1.png`],
                 name: "Instagram"
             }, {
-                pictures: [`${process.env.BASE_URL}img/netflix/login_1.jpg`],
+                pictures: [`${process.env.BASE_URL}img/netflix/login_1.png`],
                 name: "Netflix"
             }, {
                 pictures: [`${process.env.BASE_URL}img/snapchat/login_1.png`],
