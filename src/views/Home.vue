@@ -6,7 +6,7 @@
             <hr class="h-px bg-gray-100 opacity-25 mt-5 mb-10">
             <Slider>
                 <Slide v-for="(app, i) of category.apps" :key="i">
-                    <img class="max-h-80 rounded transform transition cursor-pointer hover:scale-105" :src="app.pictures[0]" loading="lazy">
+                    <img class="max-h-80 w-48 rounded transform transition cursor-pointer hover:scale-105" :src="app.pictures[0]" loading="lazy">
                     <legend class="text-xs text-center mt-4 font-bold">{{ app.name }}</legend>
                 </Slide>
             </Slider>

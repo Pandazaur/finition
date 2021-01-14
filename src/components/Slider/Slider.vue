@@ -2,13 +2,13 @@
     <div class="relative">
         <div ref="sliderRef" class="slider flex overflow-auto -mx-5 md:-mx-8 pt-2 pb-10">
             <transition name="appear-from-left">
-                <div class="arrow arrow-left" v-if="showLeftArrow">
+                <div class="arrow arrow-left" v-if="showLeftArrow" @click="onClickArrow('left')">
                     <img class="arrow-img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMS42NDEgNTExLjY0MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjY0MSA1MTEuNjQxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTE0OC4zMiwyNTUuNzZMMzg2LjA4LDE4YzQuMDUzLTQuMjY3LDMuOTQ3LTEwLjk4Ny0wLjIxMy0xNS4wNGMtNC4xNi0zLjk0Ny0xMC42NjctMy45NDctMTQuODI3LDBMMTI1LjcwNywyNDguMjkzDQoJCQljLTQuMTYsNC4xNi00LjE2LDEwLjg4LDAsMTUuMDRMMzcxLjA0LDUwOC42NjdjNC4yNjcsNC4wNTMsMTAuOTg3LDMuOTQ3LDE1LjA0LTAuMjEzYzMuOTQ3LTQuMTYsMy45NDctMTAuNjY3LDAtMTQuODI3DQoJCQlMMTQ4LjMyLDI1NS43NnoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
                 </div>
             </transition>
             <slot></slot>
             <transition name="appear-from-right">
-                <div class="arrow arrow-right" v-if="showRightArrow">
+                <div class="arrow arrow-right" v-if="showRightArrow" @click="onClickArrow('right')">
                     <img class="arrow-img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMS45NDkgNTExLjk0OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjk0OSA1MTEuOTQ5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTM4Ni4yMzUsMjQ4LjMwOEwxNDAuOTAyLDIuOTc1Yy00LjI2Ny00LjA1My0xMC45ODctMy45NDctMTUuMDQsMC4yMTNjLTMuOTQ3LDQuMTYtMy45NDcsMTAuNjY3LDAsMTQuODI3bDIzNy43NiwyMzcuNzYNCgkJCWwtMjM3Ljc2LDIzNy44NjdjLTQuMjY3LDQuMDUzLTQuMzczLDEwLjg4LTAuMjEzLDE1LjA0YzQuMDUzLDQuMjY3LDEwLjg4LDQuMzczLDE1LjA0LDAuMjEzYzAuMTA3LTAuMTA3LDAuMjEzLTAuMjEzLDAuMjEzLTAuMjEzDQoJCQlsMjQ1LjMzMy0yNDUuMzMzQzM5MC4zOTUsMjU5LjE4OCwzOTAuMzk1LDI1Mi40NjgsMzg2LjIzNSwyNDguMzA4eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
                 </div>
             </transition>
@@ -18,6 +18,8 @@
 
 <script lang="ts">
     import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
+
+    const SCROLL_WIDTH = 400
 
     export default defineComponent({
         name: 'Slider',
@@ -67,10 +69,24 @@
                 console.log({ showLeftArrow: showLeftArrow.value, showRightArrow: showRightArrow.value  })
             }
 
+            const onClickArrow = (direction: 'left' | 'right') => {
+                if (!sliderRef?.value) {
+                    return null
+                }
+
+                if (direction === 'left') {
+                    // sliderRef.value.scrollLeft -= 200
+                    sliderRef.value.scrollTo({ left: sliderRef.value.scrollLeft - SCROLL_WIDTH })
+                } else if (direction === 'right') {
+                    sliderRef.value.scrollTo({ left: sliderRef.value.scrollLeft + SCROLL_WIDTH })
+                }
+            }
+
             return {
                 sliderRef,
                 showLeftArrow,
                 showRightArrow,
+                onClickArrow,
             }
 
         }
@@ -88,8 +104,9 @@
     }
 
     .arrow {
-        --size: 80px;
+        --size: 50px;
 
+        scroll-behavior: smooth;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -107,7 +124,7 @@
     }
 
     .arrow-img {
-        height: 30px;
+        height: calc(var(--size, 30px) / 3);
     }
 
     .arrow-left {
@@ -120,21 +137,21 @@
 
     /* TRANSITION */
     .appear-from-left-enter-active, .appear-from-left-leave-active {
-        transition: opacity .3s, left .3s;
+        transition: opacity .2s, left .2s;
         transition-timing-function: ease-in-out;
     }
     .appear-from-left-enter-from, .appear-from-left-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0!important;
-        left: -5%!important;
+        left: -20px!important;
     }
 
     .appear-from-right-enter-active, .appear-from-right-leave-active {
-        transition: opacity .3s, right .3s;
+        transition: opacity .2s, right .2s;
         transition-timing-function: ease-in-out;
     }
 
     .appear-from-right-enter-from, .appear-from-right-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
-        right: -5%;
+        right: -20px;
     }
 </style>
