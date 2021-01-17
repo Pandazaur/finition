@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <div ref="sliderRef" class="slider flex overflow-auto -mx-5 md:-mx-8 pt-2 pb-10">
+        <div ref="sliderRef" class="slider flex overflow-auto -mx-5 md:-mx-8 pt-2 pb-10" :class="{'multiple-items': itemCount && itemCount > 1}">
             <transition name="appear-from-left">
                 <div class="arrow arrow-left" v-if="showLeftArrow" @click="onClickArrow('left')">
                     <img class="arrow-img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMS42NDEgNTExLjY0MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjY0MSA1MTEuNjQxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTE0OC4zMiwyNTUuNzZMMzg2LjA4LDE4YzQuMDUzLTQuMjY3LDMuOTQ3LTEwLjk4Ny0wLjIxMy0xNS4wNGMtNC4xNi0zLjk0Ny0xMC42NjctMy45NDctMTQuODI3LDBMMTI1LjcwNywyNDguMjkzDQoJCQljLTQuMTYsNC4xNi00LjE2LDEwLjg4LDAsMTUuMDRMMzcxLjA0LDUwOC42NjdjNC4yNjcsNC4wNTMsMTAuOTg3LDMuOTQ3LDE1LjA0LTAuMjEzYzMuOTQ3LTQuMTYsMy45NDctMTAuNjY3LDAtMTQuODI3DQoJCQlMMTQ4LjMyLDI1NS43NnoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
@@ -23,6 +23,9 @@
 
     export default defineComponent({
         name: 'Slider',
+        props: {
+            itemCount: { default: null }
+        },
         setup (props) {
             const sliderRef = ref<HTMLDivElement | null>(null)
             const scrollPercentage = ref<number>(1)
@@ -96,7 +99,9 @@
 <style lang="scss" scoped>
     .slider {
         scroll-snap-type: x proximity;
+    }
 
+    .multiple-items {
         &::after {
             content: '';
             @apply pr-5;

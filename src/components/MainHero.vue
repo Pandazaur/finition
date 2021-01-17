@@ -3,15 +3,13 @@
         <PageHeader />
         <div class="py-24">
             <div class="container px-3 mx-auto text-white">
-                <!--Left Col-->
                 <div class="flex flex-col w-full justify-center items-center text-center py-10 md:py-20">
-                    <!-- <p class="font-display tracking-loose w-full">Out of inspiration ?</p> -->
                     <div class="mb-10">
                         <h1 id="brand" class="appear my-4 text-4xl md:text-5xl font-brand leading-tight text-center">
                             FINITION
                         </h1>
                         <p class="appear appear-2 leading-normal font-display font-light text-md md:text-xl mb-8">
-                            A collection of mobile screen example by big companies.
+                            Get inspired by the biggest companies for your mobile app.
                         </p>
                     </div>
                     <div class="appear appear-3">
