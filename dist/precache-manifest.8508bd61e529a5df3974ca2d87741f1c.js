@@ -4,8 +4,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "920f7af1073da174b9bd",
-    "url": "/css/app.674d2a6b.css"
+    "revision": "bfcf2dbc9c35ee0ff2fd",
+    "url": "/css/app.7eb32270.css"
+  },
+  {
+    "revision": "1ba2ae710d927f13d483fd5d1e548c9b",
+    "url": "/favicon.ico.old"
   },
   {
     "revision": "8d8230782a6a10dbf7095fde95fa1c0c",
@@ -24,12 +28,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/facebook/login_1.png"
   },
   {
-    "revision": "7981b5eb2e3c81f267450d3a37a8991a",
-    "url": "/img/instagram/login_web_1.png"
+    "revision": "8456881438cf2fd22848eb34a9a27d52",
+    "url": "/img/instagram/login_1.png"
   },
   {
-    "revision": "75efb2c8a04c01b561174a5682e7344c",
-    "url": "/img/netflix/login_1.jpg"
+    "revision": "d331d24c26141bb78a47ff0ce1004807",
+    "url": "/img/netflix/login_1.png"
   },
   {
     "revision": "287faf9c261e28ce07a5b20b27684daa",
@@ -44,20 +48,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/twitter/login_1.png"
   },
   {
-    "revision": "e71b7f94fc1e635631d9cecce1ab6e58",
+    "revision": "76d194b2011e72c293c7dd15911f58f9",
     "url": "/index.html"
   },
   {
-    "revision": "93c6d3e6f1a3e239d2a4",
-    "url": "/js/about.cec9c08b.js"
+    "revision": "ff2d3e08539172fa2c3c",
+    "url": "/js/about.57bc9fb0.js"
   },
   {
-    "revision": "920f7af1073da174b9bd",
-    "url": "/js/app.03369263.js"
+    "revision": "bfcf2dbc9c35ee0ff2fd",
+    "url": "/js/app.089d7745.js"
   },
   {
-    "revision": "d8a9e8e5af3de185685b",
-    "url": "/js/chunk-vendors.3dfea2f6.js"
+    "revision": "d833d4f66da02042f5cd",
+    "url": "/js/chunk-vendors.0fb6193e.js"
   },
   {
     "revision": "93b1841fc740094d7bbaef29c0fc88e8",

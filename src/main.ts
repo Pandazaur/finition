@@ -5,5 +5,6 @@ import router from './router'
 import store from './store'
 
 import '@/assets/styles/app.css'
+import '@glidejs/glide/dist/css/glide.core.css'
 
 createApp(App).use(store).use(router).mount('#app')

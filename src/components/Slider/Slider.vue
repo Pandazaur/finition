@@ -99,6 +99,7 @@
 <style lang="scss" scoped>
     .slider {
         scroll-snap-type: x proximity;
+        max-height: 100%;
     }
 
     .multiple-items {
