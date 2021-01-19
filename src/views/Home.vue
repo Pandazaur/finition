@@ -1,15 +1,15 @@
 <template>
     <div>
         <MainHero/>
-        <section id="collections" class="py-10 px-5 md:py-14 md:px-8 text-white mx-auto" v-for="(category, x) of screenCategories" :key="x">
+        <section id="collections" class="py-10 px-5 md:py-14 md:px-8 text-white container mx-auto" v-for="(category, x) of screenCategories" :key="x">
             <h2 class="text-2xl md:text-3xl font-display">{{ category.label }}</h2>
             <hr class="h-px bg-gray-100 opacity-25 mt-5 mb-10">
 
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        <li class="glide__slide" v-for="(app, i) of category.apps" :key="i">
-                            <img class="max-h-80 pointer-events-none w-48 rounded cursor-pointer" :src="app.pictures[0]" loading="lazy">
+                        <li class="glide__slide" v-for="(app, i) of category.apps" :key="i" @click="onOpenModal(app)">
+                            <img class="pointer-events-none w-96 rounded cursor-pointer" :src="app.pictures[0]" loading="lazy" >
                             <div class="flex items-center justify-center text-xs text-center mt-4">
                                 <div class="flex text-center items-center justify-center">
                                     <IconImage class="mr-1" :size="16" />
@@ -36,24 +36,6 @@
                     </button>
                 </div>
             </div>
-<!--            <Slider :item-count="category.apps.length">-->
-<!--                <Slide v-for="(app, i) of category.apps" :key="i" @click.native="onOpenModal(app)">-->
-<!--                    <img class="max-h-80 w-48 rounded transform transition cursor-pointer hover:scale-105" :src="app.pictures[0]" loading="lazy">-->
-<!--                    <legend class="">-->
-
-<!--                    </legend>-->
-<!--                    <div class="flex items-center justify-center text-xs text-center mt-4">-->
-<!--                        <div class="flex text-center items-center justify-center">-->
-<!--                            <IconImage class="mr-1" :size="16" />-->
-<!--                            <span class="font-thin">{{ app.pictures.length }}</span>-->
-<!--                        </div>-->
-<!--                        <div class="separator h-4 w-px bg-white bg-opacity-25 mx-2"></div>-->
-<!--                        <div class="font-bold">-->
-<!--                            {{ app.name }}-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </Slide>-->
-<!--            </Slider>-->
         </section>
         <MainFooter/>
 
@@ -86,7 +68,7 @@
   import Modal from '../components/Modal.vue'
   import IconImage from '@/components/icons/IconImage.vue'
   import screenCategories from '@/dataset/screens'
-  import {App} from '@/types/App.type'
+  import { App } from '@/types/App.type'
 
   // @ts-ignore
   import Glide, { Controls, Breakpoints, Swipe, Images } from '@glidejs/glide/dist/glide.modular.esm'
@@ -106,30 +88,33 @@
             const appToShow = ref<App | null>(null)
 
             onMounted(() => {
+
                 // @ts-ignore
                 new Glide('.glide', {
                     type: 'slider',
                     startAt: 0,
                     perView: 5,
+                    gap: "50px",
                     bound: true,
-                    perTouch: 5,
+                    // perTouch: 4,
                     rewind: false,
                     breakpoints: {
                         600: {
                             perView: 2,
                         },
                         900: {
-                            perView: 3
+                            perView: 3,
+                            gap: "30px",
                         },
                         1200: {
-                            perView: 5
+                            perView: 4
                         }
                     }
                 }).mount({
                     Controls,
                     Breakpoints,
                     Swipe,
-                    Images,
+                    // Images,
                 })
             })
 
@@ -170,7 +155,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255, 255, 255, .9);
+        background: rgba(255, 255, 255, .7);
         backdrop-filter: blur(2px);
         height: var(--size);
         width: var(--size);
@@ -190,5 +175,9 @@
 
     .arrow-right {
         right: 0;
+    }
+
+    .glide__track {
+        overflow: visible!important;
     }
 </style>
