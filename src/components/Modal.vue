@@ -2,7 +2,7 @@
     <teleport to="body">
         <transition name="fadeIn">
             <div class="modal-bg" v-if="isVisible" @click="() => isVisible = false">
-                <div class="modal" @click.stop="() => null" v-if="isVisible">
+                <div class="modal container" @click.stop="() => null">
                     <slot></slot>
                 </div>
             </div>

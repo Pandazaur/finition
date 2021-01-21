@@ -39,23 +39,7 @@
         </section>
         <MainFooter/>
 
-        <Modal ref="lightBox">
-            <div class="lightbox p-5">
-                <Slider class="lightbox-slider" v-if="appToShow" :item-count="appToShow.pictures.length">
-                    <Slide v-for="(picture, i) of appToShow.pictures" :key="i">
-                        <img class="h-full max-w-md rounded" :src="picture" loading="lazy">
-                        <legend class="text-xs text-white text-center mt-4 font-bold">
-                            {{ i + 1 }} / {{ appToShow.pictures.length }}
-                        </legend>
-                    </Slide>
-                </Slider>
-                <div class="flex justify-center">
-                    <span class="text-xs text-white text-center mt-4 font-bold rounded-full bg-black p-3 bg-opacity-70">
-                        {{ appToShow.name }}
-                    </span>
-                </div>
-            </div>
-        </Modal>
+        <Lightbox ref="lightBox"/>
     </div>
 </template>
 
@@ -67,11 +51,13 @@
   import Slide from '../components/Slider/Slide.vue'
   import Modal from '../components/Modal.vue'
   import IconImage from '@/components/icons/IconImage.vue'
+  import Lightbox from '@/components/Home/Lightbox.vue'
   import screenCategories from '@/dataset/screens'
   import { App } from '@/types/App.type'
 
   // @ts-ignore
   import Glide, { Controls, Breakpoints, Swipe, Images } from '@glidejs/glide/dist/glide.modular.esm'
+  import useGlideSlider from '@/use/GlideSlider'
 
   export default defineComponent({
         name: 'Home',
@@ -82,40 +68,14 @@
             Slide,
             Modal,
             IconImage,
+            Lightbox,
         },
         setup () {
             const lightBox = ref<any | null>(null)
             const appToShow = ref<App | null>(null)
 
             onMounted(() => {
-
-                // @ts-ignore
-                new Glide('.glide', {
-                    type: 'slider',
-                    startAt: 0,
-                    perView: 5,
-                    gap: "50px",
-                    bound: true,
-                    // perTouch: 4,
-                    rewind: false,
-                    breakpoints: {
-                        600: {
-                            perView: 2,
-                        },
-                        900: {
-                            perView: 3,
-                            gap: "30px",
-                        },
-                        1200: {
-                            perView: 4
-                        }
-                    }
-                }).mount({
-                    Controls,
-                    Breakpoints,
-                    Swipe,
-                    // Images,
-                })
+                useGlideSlider('.glide')
             })
 
             const onOpenModal = (app: App) => {
@@ -123,10 +83,8 @@
                     return null
                 }
 
-                appToShow.value = app
-
                 if (lightBox.value) {
-                    lightBox.value.open()
+                    lightBox.value.open(app)
                 }
             }
 
